@@ -22,19 +22,17 @@
               </div>
             </div>
             <form [formGroup]="eventEditForm" class="week-event-info-edit" *ngIf="i === editIndex">
-              <div class="edit-inputs-container ">
-              <div lass="edit-input ">
+              <div class="edit-inputs-container">
+              <div class="edit-input">
                <input type="text" formControlName="eventName" class="editing-input">
-               <div class="validation-text" *ngIf="(eventEditForm.get('eventName').invalid && eventEditForm.get('eventName').touched) || 
+               <div class="validation-text" *ngIf="(eventEditForm.get('eventName').invalid && eventEditForm.get('eventName').touched) ||
                eventEditForm.get('eventName').dirty">
                            <small *ngIf="eventEditForm.get('eventName').errors?.['required']" class="text-danger">Event is
                                required</small>
                            <small *ngIf="eventEditForm.get('eventName').errors?.['maxlength']" class="text-danger">
-                               Name is too long!
-                           </small>
+                               Name is too long!</small>
                            <small *ngIf="eventEditForm.get('eventName').errors?.['pattern']" class="text-danger">
-                               Only letters allowed!
-                           </small>
+                               Only letters allowed!</small>
                        </div>
                       </div>
                <select id="typeOfDay" class="select-menu" formControlName="typeOfDay">

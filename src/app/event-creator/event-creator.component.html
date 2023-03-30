@@ -3,16 +3,14 @@
     <div class="component-block">
        <label class="component-label" for="eventName">Event name</label>
        <input type="text" id="eventName" placeholder="Type your event" formControlName="eventName">
-       <div *ngIf="(eventCreationForm.get('eventName').invalid && eventCreationForm.get('eventName').touched) || 
+       <div *ngIf="(eventCreationForm.get('eventName').invalid && eventCreationForm.get('eventName').touched) ||
           eventCreationForm.get('eventName').dirty">
           <small *ngIf="eventCreationForm.get('eventName').errors?.['required']" class="text-danger">Event is
           required</small>
           <small *ngIf="eventCreationForm.get('eventName').errors?.['maxlength']" class="text-danger">
-          Name is too long!
-          </small>
+          Name is too long!</small>
           <small *ngIf="eventCreationForm.get('eventName').errors?.['pattern']" class="text-danger">
-          Only letters allowed!
-          </small>
+          Only letters allowed!</small>
        </div>
     </div>
     <div class="component-block">

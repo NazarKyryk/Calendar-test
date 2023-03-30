@@ -1,7 +1,7 @@
 import { WeekService } from './services/week.service';
 import * as moment from 'moment';
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { GenerateCalendarService } from './services/generate-calendar.service';
 import { EventData } from '../model/event';
 
@@ -36,7 +36,7 @@ export class CalendarComponent {
   formStatus(data: boolean) {
     this.isEventFormOpen = data
   }
-  
+
   onCreatorDataReceive(data: EventData[]) {
     this.eventDayInfoData = data
   }

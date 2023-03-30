@@ -7,8 +7,8 @@
       <p class="events-list-message">Event: {{ item.eventName }}</p>
       <p class="events-list-message">Type of Event: {{ item.typeOfDay }}</p>
       <div >
-        <button class="edit-btn" (click)="onEdit(i)">Edit</button>
-        <button class="delete-btn" (click)="deleteEvent(i)">Delete</button>
+        <button class="black-btn" (click)="onEdit(i)">Edit</button>
+        <button class="green-btn" (click)="deleteEvent(i)">Delete</button>
       </div>
    </div>
          <form [formGroup]="eventEditForm" class="week-event-info-edit" *ngIf="i === editIndex">
@@ -30,15 +30,15 @@
               </select>
             </div>
             <div class="btn-container-edit">
-              <button type="submit" class="save-btn" (click)="onSave(i)">Save</button>
-              <button type="button" class="cancel-btn" (click)="onReturn()">Cancel</button>
+              <button type="submit" class="green-btn" (click)="onSave(i)">Save</button>
+              <button type="button" class="black-btn" (click)="onReturn()">Cancel</button>
             </div>
           </form>
        </div>
      </div>
-     <p class="no-events-message" *ngIf="filteredData.length === 0 || eventData.length === 0">No Events!!🌝</p>     <div class="alert-box-actions">
+     <p class="no-events-message" *ngIf="filteredData.length === 0 || eventData.length === 0">No Events!!🌝</p>
+     <div class="alert-box-actions">
        <button class="event-creator-btn" type="button" (click)="closeDialog()">Close</button>
      </div>
    </div>
  </div>
- 

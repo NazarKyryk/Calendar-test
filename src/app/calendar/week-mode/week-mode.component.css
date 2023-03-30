@@ -10,16 +10,19 @@ td {
   vertical-align: middle;
   border: 1px solid #ccc;
 }
+
 .week-event-info {
   display: flex;
   flex-direction: column;
   text-align: start;
 }
+
 .week-event-info p {
   margin-left: 10px;
   margin-top: 5px;
   margin-bottom: 5px;
 }
+
 .week-event {
   border: 1px solid rgb(7, 166, 140);
 }
@@ -27,9 +30,11 @@ td {
 .week-event-name {
   font-size: 12px;
 }
+
 .week-event-navigation button {
   margin: 5px;
 }
+
 .delete-btn {
   background: rgb(7, 166, 140);
   border-color: rgb(7, 166, 140);
@@ -51,8 +56,7 @@ td {
   font-size: 10px;
 }
 
-.save-btn
-{
+.save-btn {
   border-color: rgb(7, 166, 140) ;
   background: rgb(7, 166, 140);
   border-radius: 4px;
@@ -64,8 +68,7 @@ td {
   margin-top: 10px;
 }
 
-.cancel-btn
-{
+.cancel-btn {
   border-color: #12141a ;
   background: #12141a;
   border-radius: 4px;
@@ -76,29 +79,25 @@ td {
   margin-right: 10px;
   margin-top: 10px;
 }
-.editing-input
-{
+.editing-input {
   max-width: 140px;
-margin: 10px 5px;
-margin-bottom: 2px;
+  margin: 10px 5px 2px;
 }
 
-.week-event-info-edit
-{
+.week-event-info-edit {
   border: 2px solid rgb(7, 166, 140);
 }
-.btn-container-edit
-{
+
+.btn-container-edit {
   margin-bottom: 5px;
 }
-.select-menu
-{
+
+.select-menu {
   min-width: 150px;
 }
 
-.validation-text
-{
+.validation-text {
   display: flex;
-    margin: 3px 8px 6px 8px;
-    color: red;
+  margin: 3px 8px 6px 8px;
+  color: red;
 }

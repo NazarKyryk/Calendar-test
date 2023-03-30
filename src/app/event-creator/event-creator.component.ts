@@ -1,4 +1,4 @@
-import { EventData } from "./../model/event";
+import { EventData } from "../model/event";
 import { Component, EventEmitter, Input, OnInit, Output } from "@angular/core";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 import * as moment from "moment";
@@ -20,7 +20,7 @@ export class EventCreatorComponent implements OnInit {
 
   ngOnInit(): void {
     this.eventCreationForm = new FormGroup({
-      eventName: new FormControl("denys", [
+      eventName: new FormControl("", [
         Validators.required,
         Validators.pattern("^^([a-zA-Z ]+|[А-ЩЬЮЯҐЄІЇа-щьюяґєії][а-щьюяґєії]*)$"),
         Validators.maxLength(20),
@@ -79,9 +79,7 @@ export class EventCreatorComponent implements OnInit {
         );
       }
     }
-
     this.creationEventFormData.emit(this.eventDayInfoData);
     this.closeDialog();
   }
-
 }

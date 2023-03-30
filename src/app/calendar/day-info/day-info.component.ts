@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnInit } from "@angular/core";
 import * as moment from "moment";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
-import { EventData } from "./../../model/event";
+import { EventData } from "../../model/event";
 
 @Component({
   selector: "app-day-info",

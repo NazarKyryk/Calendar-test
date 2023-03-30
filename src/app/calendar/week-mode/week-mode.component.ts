@@ -1,8 +1,8 @@
-import { EventData } from "./../../model/event";
-import { Component, Input, OnInit } from "@angular/core";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import {EventData} from "../../model/event";
+import {Component, Input, OnInit} from "@angular/core";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 import * as moment from "moment";
-import { WeekService } from "../services/week.service";
+import {WeekService} from "../services/week.service";
 
 @Component({
   selector: "app-week-mode",
@@ -45,7 +45,6 @@ export class WeekModeComponent implements OnInit {
   onEdit(index: number) {
     this.editIndex = index;
     this.editEventData = Object.assign({}, this.eventDayInfoData[index]);
-
     this.eventEditForm.setValue({
       eventName: this.editEventData.eventName,
       typeOfDay: this.editEventData.typeOfDay,
@@ -56,13 +55,12 @@ export class WeekModeComponent implements OnInit {
     this.editIndex = -1;
   }
   onSave(index: number) {
-    const editedData: EventData = {
+    this.eventDayInfoData[index] = {
       eventName: this.eventEditForm.value.eventName,
       typeOfDay: this.eventEditForm.value.typeOfDay,
       eventDate: this.eventDayInfoData[index].eventDate,
       duration: this.eventDayInfoData[index].duration,
     };
-    this.eventDayInfoData[index] = editedData;
     localStorage.setItem(
       "eventFormData",
       JSON.stringify(this.eventDayInfoData)

@@ -1,6 +1,7 @@
-import { EventData } from "./../../model/event";
+import { EventData } from "../../model/event";
 import { Component, EventEmitter, Input, Output } from "@angular/core";
 import * as moment from "moment";
+
 @Component({
   selector: "app-month-mode",
   templateUrl: "./month-mode.component.html",
@@ -27,6 +28,7 @@ export class MonthModeComponent {
     this.monthChosenDay = day;
     this.test.emit(this.eventDayInfoData)
   }
+
   isEventDay(day: moment.Moment) {
     const eventDates = this.eventDayInfoData.map((item: EventData) => item.eventDate)
     return JSON.stringify(eventDates).includes(day.format("YYYY-MM-DD"));

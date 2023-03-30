@@ -56,27 +56,12 @@
   margin-left: 10px;
 }
 
-.delete-btn {
-  align-items: center;
-  min-width: 40px;
-  height: 32px;
-  background: #07a68c;
-  border-color: #07a68c ;
-  border-radius: 4px;
-  color: #fff;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  margin-right: 10px;
-  margin-top: 10px;
-}
-
-.edit-btn {
+.black-btn {
   align-items: center;
   min-width: 40px;
   height: 32px;
   border-color: #12141a;
-  background:#12141a;
+  background: #12141a;
   border-radius: 4px;
   color: #fff;
   font-style: normal;
@@ -86,27 +71,12 @@
   margin-top: 10px;
 }
 
-.save-btn {
+.green-btn {
   align-items: center;
   min-width: 40px;
   height: 32px;
   border-color: #07a68c;
   background: #07a68c;
-  border-radius: 4px;
-  color: #fff;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  margin-right: 10px;
-  margin-top: 10px;
-}
-
-.cancel-btn {
-  align-items: center;
-  min-width: 40px;
-  height: 32px;
-  border-color: #12141a ;
-  background: #12141a;
   border-radius: 4px;
   color: #fff;
   font-style: normal;
@@ -128,26 +98,21 @@
   margin: 15px 150px 0 10px;
 }
 
-.edit-input
-{
+.edit-input {
   display: flex;
   flex-direction: column;
 }
 
-.edit-inputs-container 
-{
+.edit-inputs-container {
   display: flex;
 }
 
-.select-menu
-
-{
+.select-menu {
   margin-top: 15px;
   max-height: 20px;
 }
 
-.validation-text
-{
+.validation-text {
   margin-left: 10px;
   color: red;
 }

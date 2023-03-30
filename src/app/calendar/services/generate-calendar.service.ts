@@ -1,10 +1,10 @@
 import { Injectable } from "@angular/core";
 import * as moment from "moment";
+
 @Injectable({
   providedIn: "root",
 })
 export class GenerateCalendarService {
-  isEventFormOpen: boolean = false;
   generateCalendar(
     currentDate: moment.Moment,
     mode: "month" | "week"
@@ -21,7 +21,6 @@ export class GenerateCalendarService {
     const times: moment.Moment[] = [];
     const months: { display: string; value: number }[] = [];
     const years: number[] = [];
-    const today: moment.Moment = moment();
 
     const startOfMonth = moment(currentDate).startOf("month").startOf("week");
     const endOfMonth = moment(currentDate).endOf("month").endOf("week");
