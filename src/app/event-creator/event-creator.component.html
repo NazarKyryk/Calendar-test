@@ -1,0 +1,45 @@
+<div class="backdrop">
+    <form [formGroup]="eventCreationForm" (ngSubmit)="onSubmit()" class="alert-box">
+    <div class="component-block">
+       <label class="component-label" for="eventName">Event name</label>
+       <input type="text" id="eventName" placeholder="Type your event" formControlName="eventName">
+       <div *ngIf="(eventCreationForm.get('eventName').invalid && eventCreationForm.get('eventName').touched) || 
+          eventCreationForm.get('eventName').dirty">
+          <small *ngIf="eventCreationForm.get('eventName').errors?.['required']" class="text-danger">Event is
+          required</small>
+          <small *ngIf="eventCreationForm.get('eventName').errors?.['maxlength']" class="text-danger">
+          Name is too long!
+          </small>
+          <small *ngIf="eventCreationForm.get('eventName').errors?.['pattern']" class="text-danger">
+          Only letters allowed!
+          </small>
+       </div>
+    </div>
+    <div class="component-block">
+       <label class="component-label" for="eventDate">Event date:</label>
+       <input type="date" id="eventDate" formControlName="eventDate">
+    </div>
+    <div class="component-block">
+       <label class="component-label" for="typeOfDay">Type of day:</label>
+       <select id="typeOfDay" formControlName="typeOfDay">
+          <option value="Simple day">Simple Day</option>
+          <option value="holiday">Holiday</option>
+       </select>
+    </div>
+    <div>
+       <p>Additional Duration:</p>
+       <div>
+          <input type="radio" id="endOfMonth" name="duration" value="endOfMonth" formControlName="duration">
+          <label for="endOfMonth">For the end of the month</label>
+       </div>
+       <div>
+          <input type="radio" id="endOfWeek" name="duration" value="endOfWeek" formControlName="duration">
+          <label for="endOfWeek">For the end of the week</label>
+       </div>
+    </div>
+    <div class="alert-box-actions">
+       <button class="event-creator-btn" type="button" (click)="closeDialog()">Close</button>
+       <button class="event-creator-btn" type="submit" [disabled]="eventCreationForm.invalid">Create</button>
+    </div>
+    </form>
+ </div>

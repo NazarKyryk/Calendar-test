@@ -1,0 +1,20 @@
+<div>
+    <table>
+       <th *ngFor="let day of daysOfWeek">{{ day.format('dddd') }}</th>
+       <tbody>
+          <tr *ngFor="let week of weeks ">
+             <ng-container *ngFor="let day of week ; let i = index">
+                <td [ngClass]="{ 'current-month': day.isSame(currentDate, 'month'), 
+                'other-month': !day.isSame(currentDate, 'month'),
+                'today': day.isSame(currentDate, 'day')}" (click)="openDialogInfo(day)">
+                <div class="day" [ngClass]="{ 'eventDay': isEventDay(day)}">
+                   <div class="day-number">{{ day.format('D') }}</div>
+                </div>
+                </td>
+             </ng-container>
+          </tr>
+       </tbody>
+    </table>
+    <app-day-info *ngIf="isDayInfoOpen"  [monthChosenDay]="monthChosenDay" [eventData]="eventDayInfoData"
+    (isEventFormClose)="onDataReceived($event)" (eventDayInfoData)="array($event)"></app-day-info>
+ </div>

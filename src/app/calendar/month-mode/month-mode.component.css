@@ -1,0 +1,44 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  width: calc(100% / 7);
+  padding: 10px;
+  text-align: center;
+  vertical-align: middle;
+  border: 1px solid #ccc;
+}
+
+.other-month .day-number {
+  color: #ccc;
+}
+
+.today .day-number {
+  color: #ff0000;
+}
+
+.day-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.day {
+  position: relative;
+  height: 50px;
+  border: 1px solid #ccc;
+}
+
+.day-number {
+  font-size: 16px;
+  position: absolute;
+  top: 5px;
+  left: 5px;
+}
+
+.eventDay {
+  position: relative;
+  height: 50px;
+  border: 2px solid #07a68c;
+}

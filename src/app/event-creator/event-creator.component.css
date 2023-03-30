@@ -1,0 +1,52 @@
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #00000042;
+  z-index: 50;
+}
+
+.alert-box
+{
+    position: fixed;
+    top:30vh;
+    left: 20vw;
+    width: 60vw;
+    padding: 16px;
+    z-index: 100;
+    background-color:#fff ;
+    box-shadow: 0 2px 8px #00000042;
+}
+.alert-box-actions
+{
+    text-align: right;
+}
+
+.event-creator-btn
+{
+  align-items: center;
+  min-width: 40px;
+  height: 32px;
+  background: #12141a;
+  border-radius: 4px;
+  color: #fff;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  margin-right: 10px;
+}
+
+.component-block
+{
+  margin-bottom: 10px;
+}
+.component-label
+{
+  margin-right: 10px;
+}
+.everySevenDays span
+{
+color:#e86d09 ;
+}

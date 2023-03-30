@@ -1,0 +1,55 @@
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let day of currentWeek">{{ day.format('dddd M/D') }}</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td *ngFor="let day of currentWeek">
+        <div *ngFor="let event of eventDayInfoData; let i = index">
+          <ng-container *ngIf="event.eventDate === day.format('YYYY-MM-DD')">
+            <div *ngIf="i !== editIndex" class="week-event">
+              <div class="week-event-info">
+                <div>
+                  <p class="week-event-name">Name:{{event.eventName}}</p>
+                  <p class="week-event-name">Type:{{event.typeOfDay}}</p>
+                </div>
+              </div>
+              <div class="week-event-navigation">
+                <button class="edit-btn" (click)="onEdit(i)">edit</button>
+                <button class="delete-btn" (click)="onDelete(i)" >delete</button>
+              </div>
+            </div>
+            <form [formGroup]="eventEditForm" class="week-event-info-edit" *ngIf="i === editIndex">
+              <div class="edit-inputs-container ">
+              <div lass="edit-input ">
+               <input type="text" formControlName="eventName" class="editing-input">
+               <div class="validation-text" *ngIf="(eventEditForm.get('eventName').invalid && eventEditForm.get('eventName').touched) || 
+               eventEditForm.get('eventName').dirty">
+                           <small *ngIf="eventEditForm.get('eventName').errors?.['required']" class="text-danger">Event is
+                               required</small>
+                           <small *ngIf="eventEditForm.get('eventName').errors?.['maxlength']" class="text-danger">
+                               Name is too long!
+                           </small>
+                           <small *ngIf="eventEditForm.get('eventName').errors?.['pattern']" class="text-danger">
+                               Only letters allowed!
+                           </small>
+                       </div>
+                      </div>
+               <select id="typeOfDay" class="select-menu" formControlName="typeOfDay">
+                  <option value="Simple day">Simple Day</option>
+                  <option value="holiday">Holiday</option>
+               </select>
+            </div>
+              <div class="btn-container-edit">
+                <button type="submit" class="save-btn" (click)="onSave(i)">Save</button>
+                <button type="button" class='cancel-btn' (click)="onReturn()">Cancel</button>
+              </div>
+            </form>
+          </ng-container>
+        </div>
+      </td>
+    </tr>
+  </tbody>
+</table>

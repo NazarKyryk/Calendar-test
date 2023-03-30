@@ -1,0 +1,44 @@
+<div class="backdrop">
+   <div class="alert-box">
+     <h2 class="day-info-header">{{ monthChosenDay.format('YYYY-MM-DD') }}</h2>
+     <div *ngFor="let item of eventData; let i = index">
+       <div   *ngIf="item.eventDate === monthChosenDay.format('YYYY-MM-DD')">
+   <div class="events-list" *ngIf="i !== editIndex">
+      <p class="events-list-message">Event: {{ item.eventName }}</p>
+      <p class="events-list-message">Type of Event: {{ item.typeOfDay }}</p>
+      <div >
+        <button class="edit-btn" (click)="onEdit(i)">Edit</button>
+        <button class="delete-btn" (click)="deleteEvent(i)">Delete</button>
+      </div>
+   </div>
+         <form [formGroup]="eventEditForm" class="week-event-info-edit" *ngIf="i === editIndex">
+            <div class="edit-inputs-container">
+              <div class="edit-input">
+                <input type="text" formControlName="eventName" class="editing-input" />
+                <div
+                  class="validation-text"
+                  *ngIf="(eventEditForm.get('eventName').invalid && eventEditForm.get('eventName').touched) || eventEditForm.get('eventName').dirty"
+                >
+                  <small *ngIf="eventEditForm.get('eventName').errors?.['required']" class="text-danger">Event is required</small>
+                  <small *ngIf="eventEditForm.get('eventName').errors?.['maxlength']" class="text-danger">Name is too long!</small>
+                  <small *ngIf="eventEditForm.get('eventName').errors?.['pattern']" class="text-danger">Only letters allowed!</small>
+                </div>
+              </div>
+              <select id="typeOfDay" class="select-menu" formControlName="typeOfDay">
+                <option value="Simple day">Simple Day</option>
+                <option value="holiday">Holiday</option>
+              </select>
+            </div>
+            <div class="btn-container-edit">
+              <button type="submit" class="save-btn" (click)="onSave(i)">Save</button>
+              <button type="button" class="cancel-btn" (click)="onReturn()">Cancel</button>
+            </div>
+          </form>
+       </div>
+     </div>
+     <p class="no-events-message" *ngIf="filteredData.length === 0 || eventData.length === 0">No Events!!🌝</p>     <div class="alert-box-actions">
+       <button class="event-creator-btn" type="button" (click)="closeDialog()">Close</button>
+     </div>
+   </div>
+ </div>
+ 
