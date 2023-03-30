@@ -14,9 +14,9 @@ export class DayInfoComponent implements OnInit {
   @Output() isEventFormClose = new EventEmitter<boolean>();
   @Output() eventDayInfoData = new EventEmitter<EventData[]>();
   editIndex: number = -1;
-  filteredData!: EventData[];
-  eventEditForm!: FormGroup;
-  editedEventData?: EventData;
+  filteredData: EventData[];
+  eventEditForm: FormGroup;
+  editedEventData: EventData;
 
   ngOnInit(): void {
     this.filteredData = this.eventData.filter(

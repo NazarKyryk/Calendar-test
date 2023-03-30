@@ -12,21 +12,21 @@ export class MonthModeComponent {
   @Input() weeks: moment.Moment[][] = [];
   @Input() currentDate: moment.Moment = moment();
   @Input() eventDayInfoData: EventData[]
-  @Output() test = new EventEmitter<EventData[]>();
-    isDayInfoOpen: boolean = false;
-  monthChosenDay!: moment.Moment;
+  @Output() eventDataReceiver = new EventEmitter<EventData[]>();
+  isDayInfoOpen: boolean = false;
+  monthChosenDay: moment.Moment;
 
   onDataReceived(data: boolean) {
     this.isDayInfoOpen = data;
   }
-  array(data: EventData[]) {
+  eventLocalData(data: EventData[]) {
     this.eventDayInfoData = data;
   }
 
   openDialogInfo(day: moment.Moment) {
     this.isDayInfoOpen = true;
     this.monthChosenDay = day;
-    this.test.emit(this.eventDayInfoData)
+    this.eventDataReceiver.emit(this.eventDayInfoData)
   }
 
   isEventDay(day: moment.Moment) {

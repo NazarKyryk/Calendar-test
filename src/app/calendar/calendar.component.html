@@ -25,11 +25,11 @@
     <div class="calendar-body">
         <div class="calendar-body">
             <app-month-mode *ngIf="mode === 'month'" [daysOfWeek]="daysOfWeek" [weeks]="weeks"
-                [currentDate]="currentDate"  [eventDayInfoData]= "eventDayInfoData" (test)="onMonthEventDataReturn($event)"></app-month-mode>
+                [currentDate]="currentDate"  [eventDayInfoData]= "eventDayInfoData" (eventDataReceiver)="onMonthEventDataReturn($event)"></app-month-mode>
         </div>
         <app-week-mode *ngIf="mode === 'week'"  [currentDate]="currentDate" [weeks]="weeks" [currentWeek]="currentWeek"
             [times]="times" [eventDayInfoData]= "eventDayInfoData" ></app-week-mode>
     </div>
-    <app-event-creator *ngIf="isEventFormOpen" [isEventFormOpen]="isEventFormOpen" 
+    <app-event-creator *ngIf="isEventFormOpen" [isEventFormOpen]="isEventFormOpen"
         (isEventFormClose)="formStatus($event)"  (creationEventFormData)="onCreatorDataReceive($event)" ></app-event-creator>
 </div>

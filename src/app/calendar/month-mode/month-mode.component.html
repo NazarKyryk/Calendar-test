@@ -4,7 +4,7 @@
        <tbody>
           <tr *ngFor="let week of weeks ">
              <ng-container *ngFor="let day of week ; let i = index">
-                <td [ngClass]="{ 'current-month': day.isSame(currentDate, 'month'), 
+                <td [ngClass]="{ 'current-month': day.isSame(currentDate, 'month'),
                 'other-month': !day.isSame(currentDate, 'month'),
                 'today': day.isSame(currentDate, 'day')}" (click)="openDialogInfo(day)">
                 <div class="day" [ngClass]="{ 'eventDay': isEventDay(day)}">
@@ -16,5 +16,5 @@
        </tbody>
     </table>
     <app-day-info *ngIf="isDayInfoOpen"  [monthChosenDay]="monthChosenDay" [eventData]="eventDayInfoData"
-    (isEventFormClose)="onDataReceived($event)" (eventDayInfoData)="array($event)"></app-day-info>
+    (isEventFormClose)="onDataReceived($event)" (eventDayInfoData)="eventLocalData($event)"></app-day-info>
  </div>

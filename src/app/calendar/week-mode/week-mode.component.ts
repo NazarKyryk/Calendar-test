@@ -10,14 +10,14 @@ import {WeekService} from "../services/week.service";
   styleUrls: ["./week-mode.component.css"],
 })
 export class WeekModeComponent implements OnInit {
-  @Input() currentDate?: moment.Moment;
+  @Input() currentDate: moment.Moment;
   @Input() weeks: moment.Moment[][] = [];
   @Input() times: moment.Moment[] = [];
   @Input() currentWeek: moment.Moment[] = [];
   @Input() eventDayInfoData: EventData[] ;
   editIndex: number = -1;
-  eventEditForm!: FormGroup;
-  editEventData!: EventData;
+  eventEditForm: FormGroup;
+  editEventData: EventData;
 
   constructor(private weekService: WeekService) { }
 
